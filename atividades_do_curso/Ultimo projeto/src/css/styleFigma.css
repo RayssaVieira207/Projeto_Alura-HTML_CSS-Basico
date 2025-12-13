@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black; 
+    color: #f6f6f6;
+    font-family: sans-serif; /* Specify a font family for consistency */
+}
+
+header {
+    background-color: rgba(1, 1, 1, 0.629); 
+    color: #f1f0f0; 
+    padding: 20px; 
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em; /* Make header larger */
+}
+
+header p {
+    color: #f9f9f9; 
+    font-size: 1.2em;
+}
+
+.btn-style {
+    background-color: cyan;
+    color: #222;
+    padding: 12px 24px; /* Slightly reduced padding for better proportions */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    transition: background-color 0.3s ease;
+}
+
+
+main {
+    padding: 20px; /* Adds spacing around the main content */
+    display: flex; /* Enables flexbox for easier layout management */
+    justify-content: space-between; /* Distributes space between left and right */
+}
+
+main h1 {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+main strong {
+    color: #22D4FD;
+}
+
+p {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.btn-container {
+    margin-top: 20px; /* Adds spacing above buttons */
+        display: flex;
+    justify-content: center; /* Center the buttons */
+
+}
+
+.btn-container button {
+    background-color: cyan;
+    color: #222;
+    padding: 12px 24px; /* Slightly reduced padding for better proportions */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-container button:hover {
+    background-color: darkcyan;
+}
+
+footer p{
+    background-color: rgba(1, 1, 1, 0.629); 
+    color: #f0f0f0; 
+    padding: 10px;
+    text-align: center;
+}
+
+.left {
+    width: 45%; /* Ajuste a largura conforme necessário */
+    text-align: center;
+}
+
+.right {
+    width: 50%; /* Ajuste a largura conforme necessário */
+    text-align: center;
+}
+
+.right img {
+    max-width: 100%;
+    height: auto;
+}
+
+.no-animation strong {
+    animation: none;
+}

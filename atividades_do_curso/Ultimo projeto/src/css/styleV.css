@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+    background-color: #f5f5dc; /* Beige background */
+    color: #333;
+}
+
+header {
+    background-color: #ff99cc; /* Pink */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #990066; /* Adds a shadow effect */
+}
+
+header p {
+    font-size: 1.2em;
+    color: white;
+}
+
+#styleSwitcher {
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#styleSwitcher.styleV {
+    background-color: #9933ff; /* Purple - a color already in the palette */
+    color: white;
+}
+
+#styleSwitcher.styleV:hover {
+    background-color: #800080; /* Dark purple - a darker shade of the base color */
+}
+
+main {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* Adjusted for better spacing */
+}
+
+main h1 {
+    color: #006699; /* Teal */
+    font-size: 2.5em;
+    font-family: 'Arial Black', sans-serif; /* Bold font */
+}
+
+main strong {
+    background-color: #ffff99; /* Pale yellow */
+    padding: 5px 4px;
+    border-radius: 10px;
+    animation: color-cycle 5s linear infinite; /* Faster animation */
+}
+
+@keyframes color-cycle {
+    0% { background-color: #ff6600; color: pink; } /* Orange, black text */
+    33% { background-color: #00cc99; color: #fff; } /* Teal, white text */
+    66% { background-color: #9933ff; color: #fff; } /* Purple, white text */
+    100% { background-color: palevioletred; color: pink; } /* Orange, black text */
+}
+
+
+p {
+    color: #663300; /* Brown */
+    line-height: 1.6;
+}
+
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center the buttons */
+}
+
+.btn-container button {
+    background-color: #009966; /* Green */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;    
+    transition: background-color 0.3s ease;
+}
+
+.btn-container button:hover {
+    background-color: #006633; /* Darker green */
+}
+
+footer p {
+    background-color: #cc6699; /* Pink */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.left {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.right {
+    flex: 1;
+}
+
+.right img {
+    max-width: 100%;
+    height: auto;
+}

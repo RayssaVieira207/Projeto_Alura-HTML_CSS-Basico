@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio HTML/CSS - Alura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --secondary-dark: #112240;
+            --accent-blue: #64ffda;
+            --light-blue: #ccd6f6;
+            --medium-blue: #8892b0;
+            --white: #e6f1ff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-dark);
+            color: var(--light-blue);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-dark);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--accent-blue);
+            font-size: 28px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--accent-blue);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--light-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-blue);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, var(--primary-dark), var(--secondary-dark));
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-blue);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--medium-blue);
+        }
+
+        .highlight {
+            background-color: rgba(100, 255, 218, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: var(--accent-blue);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 40px 0;
+            background-color: var(--secondary-dark);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 30px 20px;
+            background-color: rgba(10, 25, 47, 0.7);
+            border-radius: 10px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: var(--medium-blue);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--white);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent-blue);
+            margin: 10px auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--secondary-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-blue);
+        }
+
+        .project-header {
+            padding: 20px;
+            background-color: rgba(10, 25, 47, 0.7);
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background-color: var(--accent-blue);
+            color: var(--primary-dark);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .lesson-badge {
+            background-color: #3a7bd5;
+        }
+
+        .activity-badge {
+            background-color: #8a2be2;
+        }
+
+        .project-number {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--primary-dark);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 22px;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .project-subtitle {
+            color: var(--medium-blue);
+            font-size: 16px;
+        }
+
+        .project-body {
+            padding: 20px;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+            color: var(--medium-blue);
+            min-height: 120px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--accent-blue);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: #52d8b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            background-color: var(--secondary-dark);
+        }
+
+        .portfolio-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .portfolio-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-blue);
+            margin-bottom: 30px;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-text {
+            max-width: 800px;
+        }
+
+        .portfolio-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .portfolio-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--medium-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020c1b;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--secondary-dark);
+            color: var(--light-blue);
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-blue);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: var(--medium-blue);
+            font-size: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                <div class="logo-text">Alura <span>Portfólio</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#portfolio">Meu Portfólio</a></li>
+                    <li><a href="#stats">Resumo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Portfólio <span>HTML & CSS</span></h1>
+            <p>Esta página reúne todos os projetos desenvolvidos durante o curso de HTML e CSS da Alura. São 5 aulas e 8
+                atividades que demonstram a evolução no aprendizado, desde conceitos básicos até o <span
+                    class="highlight">projeto final</span>.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Aulas Completas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Atividades Práticas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Projetos de Portfólio</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Projeto Final</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projetos do Curso</h2>
+
+            <div class="projects-grid">
+                <!-- Projeto 1 - Exemplo de Estrutura -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">01</div>
+                        <span class="project-badge lesson-badge">Exemplo</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Estrutura HTML Básica</h3>
+                        <div class="project-subtitle">index1.html</div>
+                        <p class="project-description">Exemplo inicial mostrando a estrutura básica de um documento HTML
+                            com elementos fundamentais: título (h1), parágrafo (p) e imagem (img) com logo do HTML5.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">Estrutura Básica</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="atividades_do_curso/index1.html" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 - Atividade 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">02</div>
+                        <span class="project-badge activity-badge">Aula 01</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Cinema e Trilhas Sonoras</h3>
+                        <div class="project-subtitle">atividade1.html</div>
+                        <p class="project-description">Primeira atividade prática criando um artigo sobre cinema e
+                            trilhas sonoras. Inclui estrutura completa com header, main, footer, estilização CSS interna
+                            e lista com características do projeto.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Layout</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="atividades_do_curso/Aula 1/atividade1.html" class="btn btn-primary"
+                                target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 - Aula 02 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">03</div>
+                        <span class="project-badge lesson-badge">Aula 02</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Portfólio Básico</h3>
+                        <div class="project-subtitle">index2.html</div>
+                        <p class="project-description">Segunda aula focada em criar uma página simples de portfólio com
+                            estrutura HTML básica, incluindo título da página, cabeçalho, parágrafo e imagem do logo
+                            HTML5.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">Portfólio</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="atividades_do_curso/Aula 2/index2.html" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 4 - Aula 04 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">04</div>
+                        <span class="project-badge lesson-badge">Aula 04</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Portfólio com CSS Externo</h3>
+                        <div class="project-subtitle">index3.html + style.css</div>
+                        <p class="project-description">Quarta aula implementando CSS externo através do arquivo
+                            style.css. Demonstra a separação entre estrutura (HTML) e apresentação (CSS), com
+                            estilização básica (fundo preto e texto branco). Página de portfólio com elementos
+                            semânticos (header, main, footer) e links para redes sociais.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS Externo</span>
+                            <span class="tech-tag">Semântica</span>
+                            <span class="tech-tag">Separação de Conteúdo</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="atividades_do_curso/Aula 4/index3.html" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 5 - Aula 05 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">05</div>
+                        <span class="project-badge lesson-badge">Aula 05</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Portfólio Aprimorado</h3>
+                        <div class="project-subtitle">index4.html + style.css atualizado</div>
+                        <p class="project-description">Quinta aula com aprimoramentos no portfólio, incluindo destaque
+                            em tags strong com cor personalizada (#22D4FD) no CSS. Continua usando elementos semânticos
+                            e CSS externo, com foco em melhorar a estilização e a apresentação visual dos elementos de
+                            destaque no texto.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Cores Personalizadas</span>
+                            <span class="tech-tag">Seletores CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="atividades_do_curso/Aula 5/index4.html" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 6 - Atividade 2 (Aula 03) -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">06</div>
+                        <span class="project-badge activity-badge">Aula 03</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Portfólio com Layout Flexbox</h3>
+                        <div class="project-subtitle">atividade2.html (CSS interno)</div>
+                        <p class="project-description">Atividade prática da terceira aula criando um portfólio avançado
+                            com CSS interno. Inclui layout com flexbox para divisão em duas colunas, botões interativos
+                            com efeitos hover, cores personalizadas (#222, cyan) e design responsivo. Demonstração de
+                            habilidades mais avançadas de estilização.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Flexbox</span>
+                            <span class="tech-tag">Design Responsivo</span>
+                            <span class="tech-tag">Efeitos Hover</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="atividades_do_curso/Aula 3/atividade2.html" class="btn btn-primary"
+                                target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 7 - Projeto Final -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">07</div>
+                        <span class="project-badge activity-badge">Projeto Final</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Projeto Final Alura</h3>
+                        <div class="project-subtitle">aula3.html</div>
+                        <p class="project-description">Projeto final do curso integrando todos os conceitos aprendidos:
+                            múltiplos arquivos CSS, JavaScript para troca de estilos, design responsivo e estrutura
+                            semântica completa.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsivo</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="atividades_do_curso/Ultimo projeto/aula3.html" class="btn btn-primary"
+                                target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 8 - Portfólio Pessoal -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">08</div>
+                        <span class="project-badge activity-badge">Portfólio Pessoal</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Meu Portfólio - Rayssa Vieira</h3>
+                        <div class="project-subtitle">atividade2.1.html</div>
+                        <p class="project-description">Portfólio pessoal em desenvolvimento com carrossel de imagens,
+                            informações sobre formação técnica em informática e links para redes sociais. Projeto com
+                            múltiplos arquivos (HTML, CSS, JS).</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Carrossel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="atividades_do_curso/atividade 2 - portifolio/atividade2.1.html"
+                                class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Ver Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a target="_blank" href="https://github.com/RayssaVIeira795" class="social-link"><i
+                        class="fab fa-github"></i></a>
+                <a target="_blank" href="https://www.instagram.com/luanna_gomess07" class="social-link"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+            <div class="copyright">
+                <p>Portfólio de Projetos - Curso HTML e CSS da Alura</p>
+                <p>Desenvolvido por Rayssa Vieira • 2025</p>
+                <p style="font-size: 14px; margin-top: 10px; color: #8892b0;">
+                    <i class="fas fa-robot" style="margin-right: 5px;"></i>
+                    Esta página de apresentação foi criada com ajuda de IA para facilitar a visualização dos
+                    projetos.
+                    Os demais projetos foram desenvolvidos sem assistência direta de IA.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Smooth scrolling para links de navegação
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Adicionar classe ativa ao link de navegação atual
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Efeito de carregamento para os cards
+        document.addEventListener('DOMContentLoaded', function () {
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach((card, index) => {
+                // Adicionar um atraso para cada card
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Important for consistent sizing */
+}
+
+body {
+    background-color: #3f3f7f; /* Darker, richer indigo */
+    color: #f0f0f0; /* Off-white for better contrast */
+    font-family: sans-serif; /* Specify a font family for consistency */
+}
+
+header {
+    background-color: #8bc34a; /* A muted green, complements indigo */
+    color: #222; /* Dark gray for text */
+    padding: 20px; /* Add padding for better spacing */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em; /* Make header larger */
+}
+
+header p {
+    color: #222; /* Dark gray for text */
+    font-size: 1.2em;
+}
+
+#styleSwitcher {
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Styles for each stylesheet - corrected class names */
+#styleSwitcher.style {
+    background-color: #4CAF50; /* Green for style1 */
+    color: white;
+}
+
+#styleSwitcher.style:hover {
+    background-color: #3e8e41; /* Darker green */
+}
+
+main {
+    padding: 20px; /* Adds spacing around the main content */
+    display: flex; /* Enables flexbox for easier layout management */
+    justify-content: space-between; /* Distributes space between left and right */
+}
+
+main h1 {
+    color: #4db6ac; /* Teal, a harmonious blue-green */
+    font-size: 2.5em;
+}
+
+main strong {
+    color: #f0f0f0; /* Light gray background */
+    padding: 5px 4px;
+    border-radius: 10px;
+    border: none;
+    animation: color-cycle 5s linear infinite;
+}
+
+@keyframes color-cycle {
+    0% { background-color: #fbbd60; color: white;} /* Light Orange */
+    33% { background-color: #00897b; color: white;} /* Brighter Teal */
+    66% { background-color: #004d40; color: white;} /* Darker Teal */
+    100% { background-color: #ffa726; color: white} /* Light Orange (loop back) */
+}
+
+p {
+    color: #d3d3d3; /* Light gray for better readability */
+    line-height: 1.6; /* Improves readability */
+}
+
+.btn-container {
+    margin-top: 20px; /* Adds spacing above buttons */
+        display: flex;
+    justify-content: center; /* Center the buttons */
+
+}
+
+.btn-container button {
+    background-color: #009688; /* Teal, matching main heading */
+    color: white;
+    padding: 12px 24px; /* Slightly reduced padding for better proportions */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.btn-container button:hover {
+    background-color: #00695c; /* Darker teal on hover */
+}
+
+footer p{
+    background-color: #282855; /* Same indigo as background */
+    color: #f0f0f0; /* Off-white for text */
+    padding: 10px;
+    text-align: center; /* Center the footer text */
+}
+
+.left {
+    flex: 1; /* Takes up available space */
+    margin-right: 20px; /* Adds spacing between left and right */
+
+}
+
+.right {
+    flex: 1; /* Takes up available space */
+}
+
+.right img {
+    max-width: 100%; /* Ensures image doesn't overflow its container */
+    height: auto; /* Maintains aspect ratio */
+}
