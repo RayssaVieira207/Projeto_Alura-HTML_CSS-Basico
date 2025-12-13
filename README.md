@@ -1,4 +1,4 @@
-# Portfólio HTML & CSS - Alura (Projeto_Alura-HTML_CSS-Basico)
+# Portfólio HTML & CSS da Alura (Projeto_Alura-HTML_CSS-Basico)
 # Sobre o Projeto
 Este é um portfólio web que reúne todos os projetos desenvolvidos durante o curso de HTML e CSS da Alura. A página apresenta de forma organizada e visualmente atrativa os 8 projetos práticos realizados ao longo do curso.
 
@@ -9,32 +9,6 @@ Este é um portfólio web que reúne todos os projetos desenvolvidos durante o c
 - Cards interativos para cada projeto
 - Estatísticas visuais do progresso do curso
 - Links diretos para todos os projetos
-
-# Estrutura de Arquivos
-portifolio-alura/
-├── index.html
-├── atividades_do_curso/
-│   ├── Aula 1/
-│   │   └── atividade1.html
-│   ├── Aula 2/
-│   │   └── index2.html
-│   ├── Aula 3/
-│   │   └── atividade2.html
-│   ├── Aula 4/
-│   │   └── index3.html
-│   │   └── style.css
-│   ├── Aula 5/
-│   │   └── index4.html
-│   │   └── style.css
-│   ├── Ultimo projeto/
-│   │   └── aula3.html
-│   │   └── style.css
-│   │   └── script.js
-│   └── atividade 2 - portifolio/
-│       └── atividade2.1.html
-│       └── style.css
-│       └── script.js
-└── README.md
 
 # Tecnologias Utilizadas
 - HTML5 - Estrutura semântica da página
