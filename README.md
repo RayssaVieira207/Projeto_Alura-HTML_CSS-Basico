@@ -116,7 +116,6 @@ Se você encontrar minhas imagens sendo usadas indevidamente:
 # Autor
 Rayssa Vieira - Desenvolvedora Web em formação
 - GitHub: @RayssaVIeira795
-- Instagram: @luanna_gomess07
 - Email: vieirarayssa207@gmail.com
 
 # Agradecimentos
