@@ -89,7 +89,7 @@ Se você encontrar minhas imagens sendo usadas indevidamente:
 
 # Autor
 Rayssa Vieira - Desenvolvedora Web em formação
-- GitHub: @RayssaVIeira795
+- GitHub: @RayssaVieira207
 - Email: vieirarayssa207@gmail.com
 
 # Agradecimentos
