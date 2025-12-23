@@ -208,6 +208,11 @@ Reporte para: `vieirarayssa207@gmail.com`
 - **Ferramentas modernas** que facilitam o desenvolvimento web
 
 ---
+**📅 Última Atualização**: 2025  
+**✅ Status**: Concluído e Funcional  
+**📱 Responsivo**: Totalmente Testado  
+**🎯 Objetivo**: Portfólio Educacional e Demonstração de Habilidades
+---
 
 <div align="center">
 
@@ -218,9 +223,3 @@ Reporte para: `vieirarayssa207@gmail.com`
 </div>
 
 ---
-
-**📅 Última Atualização**: 2025  
-**✅ Status**: Concluído e Funcional  
-**📱 Responsivo**: Totalmente Testado  
-**🎯 Objetivo**: Portfólio Educacional e Demonstração de Habilidades
-```
